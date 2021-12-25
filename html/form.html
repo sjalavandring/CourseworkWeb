@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no" charset="UTF-8">
+	<link rel="stylesheet" href="../css/styles.css">
+	<title>Booking form</title>
+</head>
+<body id="body">
+	<form class="bookForm " id="slider">		
+		<div class="bookForm-slider slide-1" action="">
+			<div class="bookForm-row">
+				<div class="bookForm__block">
+					<input class="bookForm__item" placeholder="Ф.И.О" autofocus>
+				</div>
+				<div class="bookForm__block">
+					<input class="bookForm__item" placeholder="Телефон">
+				</div>
+			</div>
+			<div class="bookForm-row">
+				<div class="bookForm__block">
+					<input class="bookForm__item" placeholder="Электронная почта">
+				</div>
+				<div class="bookForm__block">
+					<input class="bookForm__item" placeholder="Количество жильцов">
+				</div>
+			</div>
+			<div class="bookForm-row">
+				<div class="bookForm__block">
+					<label for="dateIn">Заселение</label>
+					<input class="bookForm__item" id="dateIn" value="2021-10-08" type="date">
+				</div>
+				<div class="bookForm__block">
+					<label for="dateOut">Выселение</label>
+					<input class="bookForm__item" id="dateOut" value="2021-10-08" type="date">				
+				</div>
+			</div>
+			<div class="bookForm-row">
+				<div class="bookForm__block">
+					<input class="bookForm__item bookForm__button" type="button" value="Далее">
+				</div>
+			</div>
+		</div>
+		<div class="bookForm-slider slide-2" action="">
+			<div class="bookForm-row">
+				<div class="bookForm__block">
+					<label class="label" for="setTime">Время заселения</label>
+					<input class="bookForm__item" id="setTime" type="time" value="12:00" step="60">
+				</div>
+				<div class="bookForm__block">
+					<label class="label" for="price">Бюджет</label>
+					<input class="bookForm__item" id="price" placeholder="Бюджет">					
+				</div>
+			</div>
+			<div class="bookForm-row">
+				<div class="bookForm__block">
+					<textarea class="bookForm__item bookForm__textarea" placeholder="Оставьте пожалуйста ваши пожелания!"></textarea>
+				</div>
+			</div>		
+			<div class="bookForm-row">
+				<div class="bookForm__block bookForm__checkbox">
+					<input class="bookForm__checkbox" type="checkbox" id="cleanCheck" value="1" >
+					<label for="cleanCheck">Уборка</label>
+				</div>
+				<div class="bookForm__block bookForm__checkbox">				
+					<input class="bookForm__checkbox" type="checkbox" id="internetCheck" value="1" >
+					<label for="internetCheck">Номер с интернетом</label>
+				</div>
+				<div class="bookForm__block bookForm__checkbox">
+					<p>Класс жилья</p>
+<!-- 					<ul class="bookForm__houseList-menu">
+						<li>Эконом</li>
+						<li>Комфорт</li>
+						<li>Бизнес</li>--
+					</ul> -->
+				</div>
+			</div>
+			<div class="bookForm-row">
+				<div class="bookForm__block">
+					<input class="bookForm__item" type="submit" value="Завершить">
+				</div>
+			</div>
+			<div class="bookForm-back" id="sliderBack">
+				<span class="bookForm-back__item"></span>
+				<span class="bookForm-back__item"></span>
+				<span class="bookForm-back__item"></span>
+			</div>
+		</div>
+		<div class="formSlider-points">
+		    <span class="formSlider-points__item" onclick="currentSlide(1)"></span> 
+		    <span class="formSlider-points__item" onclick="currentSlide(2)"></span> 
+		</div>
+		<div class="bookForm-close" id="sliderClose">
+			<span class="bookform-close__item"></span>
+			<span class="bookform-close__item"></span>
+		</div>
+	</form>
+	<script src="../javascript/formSlider.js"></script>
+</body>
+</html>

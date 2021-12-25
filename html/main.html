@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Бронирование</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no" charset="UTF-8">
+	<link type ="image/x-icon" rel="shortcut icon" href="../img/logo16.ico" type="image/x-icon">
+	<link href="../fonts/IndieFlower-Regular.ttf">
+	<link rel="stylesheet" href="../css/styles.css">
+	<link rel="stylesheet" href="../css/stylesMedia.css">
+	<script src="../javascript/formSlider.js" defer></script>
+	<script type="text/javascript" src="../javascript/script.js" defer></script>
+	<script type="text/javascript" src="../javascript/GetPost.js" defer></script>
+</head>
+<div id="shadowBg"></div>
+<body>
+	<header class="header">
+		<nav class="nav container">
+			<div class="nav-menu">
+				<div class="logo">
+					<a href="#"><img class="logo__image" src="../img/logo.png" alt="logo" width="60" height="60"></a>
+				</div>
+				<ul class="menu">
+					<li class="menu-item"><a href="main">Home</a></li>
+					<li class="menu-item"><a href="">About</a></li>
+					<li class="menu-item"><a href="">Booking</a></li>
+					<li class="menu-item"><a href="">Review</a></li>
+					<li class="menu-item"><a href="">Location</a></li>
+					<li class="menu-item"><a href="">Contacts</a></li>
+				</ul>
+			</div>				
+			<div class="nav-lang">
+				<div class="lang">
+					<a href="#"><img class ="lang__item" src="../img/rulang.png" alt="ru lang" width="32px" height="32px"></a>
+				</div>
+				<div class="lang inactive">
+					<a href="#"><img class ="lang__item"src="../img/enlang.png" alt="ru lang" width="32px" height="32px"></a>
+				</div>
+				<div class="lang inactive">
+					<a href="#"><img class ="lang__item" src="../img/eu.png" alt="ru lang" width="32px" height="32px"></a>
+				</div>
+			</div>
+			<div class="burger" id="outerBurger">
+				<span class="burger__item"></span>
+				<span class="burger__item"></span>
+				<span class="burger__item"></span>
+			</div>
+			<div class="menu-box inactive" id="menu-box">
+		    	<div class="menu-list__top">
+	    			<div class="burger" id="innerBurger">
+	    				<span></span>
+	    				<span></span>
+	    				<span></span>
+	    			</div>
+	    			<div class="menu-list__title">
+	    				<h3>Menu</h3>
+	    			</div>
+	    			<div class="menu-list__exit" id="menuExit">
+	    				<span></span>
+	    				<span></span>
+	    			</div>
+	    		</div>
+				<ul class="burger-menu">
+					<li class="burger-menu__item">Home</li>
+					<li class="burger-menu__item">About</li>
+					<li class="burger-menu__item">Booking</li>
+					<li class="burger-menu__item">Review</li>
+					<li class="burger-menu__item">Location</li>
+					<li class="burger-menu__item">Contacts</li>
+					<li class="burger-menu__item lang-inner">
+						<a href="#"><img src="../img/rulang.png" alt="ru lang" width="32px" height="32px"></a>
+						<a href="#"><img src="../img/enlang.png" alt="ru lang" width="32px" height="32px"></a>
+						<a href="#"><img src="../img/eu.png" alt="ru lang" width="32px" height="32px"></a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="title container">
+			<div class="title__title">
+				<h1>Заголовок</h1>
+			</div>
+			<div class="title__discription">
+				Лучшие предложения по доступной цене
+			</div>	
+			<button class="bookButton" id="bookbutton">Забронировать</button>
+			<button class="getButton" id="getbutton">Получить данные</button>
+		</div>
+		<form class="bookForm  inactive formMove" id="slider" autocomplete="on" onsubmit="return submiting()">		
+			<div class="bookForm-slider slide-1">
+				<div class="bookForm-row">
+					<div class="bookForm__block">
+						<input class="bookForm__item input" placeholder="Ф.И.О" autocomplete="on" pattern="^[А-Яа-яЁё\s]+$" name="FIO" autofocus required>
+					</div>
+					<div class="bookForm__block">
+						<input class="bookForm__item input" placeholder="Телефон" autocomplete="on" pattern="^([+]{1}[7]{1}[0-9]{10})$" name="PHONE" required>
+					</div>
+				</div>
+				<div class="bookForm-row">
+					<div class="bookForm__block">
+						<input class="bookForm__item input"  placeholder="Электронная почта" autocomplete="on" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="MAIL" required>
+					</div>
+					<div class="bookForm__block">
+						<input class="bookForm__item input" placeholder="Количество жильцов" autocomplete="on" pattern="[0-9]{1,}" name="VISITORS" required>
+					</div>
+				</div>
+				<div class="bookForm-row">
+					<div class="bookForm__block">
+						<label for="dateIn">Заселение</label>
+						<input class="bookForm__item input" id="dateIn" value="2021-10-08" type="date" name="DATEIN" required>
+					</div>
+					<div class="bookForm__block">
+						<label for="dateOut">Выселение</label>
+						<input class="bookForm__item input" id="dateOut" value="2021-10-08" type="date" name="DATEOUT" required>				
+					</div>
+				</div>
+				<div class="bookForm-row">
+					<div class="bookForm__block">
+						<input class="bookForm__item bookForm__button" type="button" value="Далее">
+					</div>
+				</div>
+			</div>
+			<div class="bookForm-slider slide-2" action="">
+				<div class="bookForm-row">
+					<div class="bookForm__block">
+						<label class="label" for="setTime">Время заселения</label>
+						<input class="bookForm__item input" id="setTime" type="time" value="12:00" step="60" name="TIME" required>
+					</div>
+					<div class="bookForm__block">
+						<label class="label" for="price">Бюджет</label>
+						<input class="bookForm__item input" id="price" placeholder="Бюджет" autocomplete="on" pattern="[0-9]{4,}"  name="BUDGET" required>					
+					</div>
+				</div>
+				<div class="bookForm-row">
+					<div class="bookForm__block">
+						<textarea class="bookForm__item bookForm__textarea input" placeholder="Оставьте пожалуйста ваши пожелания!" autocomplete="on" pattern="^[А-Яа-яЁё\s]+$" name="COMMENT"></textarea>
+					</div>
+				</div>		
+				<div class="bookForm-row">
+					<div class="bookForm__block bookForm__checkbox">
+						<input class="bookForm__checkbox input" type="checkbox" id="cleanCheck" name="CLEANING">
+						<label for="cleanCheck">Уборка</label>
+					</div>
+					<div class="bookForm__block bookForm__checkbox">				
+						<input class="bookForm__checkbox input" type="checkbox" id="internetCheck" name="INTERNET">
+						<label for="internetCheck">Номер с интернетом</label>
+					</div>
+				</div>
+				<div class="bookForm-row">
+					<div class="bookForm__block">
+						<input class="bookForm__item" type="submit" value="Завершить" id="submitButton" >
+					</div>
+				</div>
+				<div class="bookForm-back" id="sliderBack">
+					<span class="bookForm-back__item"></span>
+					<span class="bookForm-back__item"></span>
+					<span class="bookForm-back__item"></span>
+				</div>
+			</div>
+			<div class="formSlider-points">
+			    <span class="formSlider-points__item points__active"></span> 
+			    <span class="formSlider-points__item points__active"></span> 
+			</div>
+			<div class="bookForm-close" id="sliderClose">
+				<span class="bookform-close__item"></span>
+				<span class="bookform-close__item"></span>
+			</div>
+		</form>
+	</header>
+	<main class="main">
+		<table class="dataOuter container inactive"></table>
+		<div class="about">
+			<div class="container">
+				<div class="about__image">
+					<img class="about__image" src="../img/logo.png" alt="logo" width="100" height="100">
+				</div>
+				<div class="tagline">
+					<h2>Why is Company Name?</h2>	
+					<div class="tagline__item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus voluptate a laborum fugiat animi, cum quos perspiciatis alias provident quasi</div>
+				</div>
+			</div>
+		</div>
+		<div class="main-offer">
+			<div class="main-offer-content container">
+				<div class="main-offer__title">
+					<h2>Варианты бронирования</h2>
+				</div>
+				<div class="rooms-row" id="rooms">
+					<div class="rooms-block">
+						<img class="rooms-block__image"src="../img/room1.jpg" alt="">
+						<div class="rooms-block__item">Площадь: 25 квадратных метров</div>
+					</div>
+					<div class="rooms-block">
+						<img class="rooms-block__image" src="../img/room2.jpg" alt="">
+						<div class="rooms-block__item">Площадь: 30 квадратных метров</div>
+					</div>
+					<div class="rooms-block">
+						<img class="rooms-block__image" src="../img/room3.jpg" alt="">
+						<div class="rooms-block__item">Площадь: 45 квадратных метров</div>
+					</div>					
+				</div>	
+				<div class="rooms-row" id="rooms">
+					<div class="rooms-block">
+						<img class="rooms-block__image"src="../img/room1.jpg" alt="">
+						<div class="rooms-block__item">Площадь: 25 квадратных метров</div>
+					</div>
+					<div class="rooms-block">
+						<img class="rooms-block__image" src="../img/room2.jpg" alt="">
+						<div class="rooms-block__item">Площадь: 30 квадратных метров</div>
+					</div>
+					<div class="rooms-block">
+						<img class="rooms-block__image" src="../img/room3.jpg" alt="">
+						<div class="rooms-block__item">Площадь: 45 квадратных метров</div>
+					</div>					
+				</div>
+			</div>
+		</div>
+		<iframe class="main-map" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2245.2207341262742!2d37.70630121608872!3d55.75466764931538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z0J3QmNCjINCc0K3QmA!5e0!3m2!1sru!2sru!4v1636377908773!5m2!1sru!2sru" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+	</main>
+	<footer class="footer">
+		<div class="footer-content container">
+			<div class="footer-social">
+				<div class="footer-phones">
+					<div class="footer-phones__item">+7 (987) 654 32 20</div>
+					<div class="footer-phones__item">+7 (987) 654 32 20</div>
+				</div>
+				<div class="footer-contacts">
+					<a href="" class="footer-contacts__item">Contacts</a>
+					<a href="" class="footer-contacts__item">FAQ</a>
+					<a href="" class="footer-contacts__item">About us</a>
+				</div>
+				<div class="footer-copyright">
+					<div class="footer-copyright__item">Copyright 2021</div>
+				</div>
+			</div>
+			<div class="footer-images">
+				<a href="#"><img class="footer-images__item" src="../img/twi.png" alt="twi"></a>
+				<a href="#"><img class="footer-images__item" src="../img/inst.png" alt="inst"></a>
+				<a href="#"><img class="footer-images__item" src="../img/vk.png" alt="vk"></a>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

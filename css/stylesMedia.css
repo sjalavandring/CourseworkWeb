@@ -1,0 +1,175 @@
+/* Large desktops and laptops */
+@media (min-width: 1200px) and (max-width: 1280px) {
+.nav {}
+.nav-menu {}
+.logo {}
+.menu {}
+.nav-lang {}
+.lang {}
+.title {
+	font-size: 2em;
+}
+.title__title {}
+.title__discription {}
+.bookButton {}
+.test {}
+	.rooms-block__image {
+		width: 280px;
+	}
+}
+
+
+
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+	.title {
+		font-size: 2em;
+	}
+	.menu-item {
+		margin: 0 12px;
+	}
+	.rooms-block__image {
+		width: 280px;
+	}
+
+}
+
+
+
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) { 
+	/*.menu-item {
+		margin: 0px 5px;
+	}*/
+	.menu {
+		display: none;
+		visibility: hidden;
+	}
+	.nav-lang {
+		display: none;
+		visibility: hidden;
+	}
+	.title {
+		font-size: 1.8em;
+	}
+	.bookButton {
+		padding: 25px 70px;
+		font-size: 25px;
+		border-radius: 40px;
+	}
+	.burger	{
+		display: block;
+	}
+	.tagline {
+		font-size: 1em;
+	}
+	.rooms-row {
+		flex-direction: column;
+		justify-content: center;
+	}
+	.rooms-block__image {
+		width: 400px;
+		margin: auto;
+	}
+}
+
+
+
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) { 
+	.header {
+		max-height: 800px;
+	}
+	.menu-item {
+		margin: 0px 5px;
+	}
+	.menu {
+		display: none;
+		visibility: hidden;
+	}
+	.nav-lang {
+		display: none;
+		visibility: hidden;
+	}
+	.title {
+		font-size: 1em;
+		margin: 70px 0px; 
+	}
+	.bookButton {
+		padding: 25px 70px;
+		font-size: 25px;
+		border-radius: 40px;
+	}
+	.burger	{
+		display: block;
+		visibility: visible;
+	}
+	.tagline {
+		font-size: 1em;
+	}
+	.rooms-row {
+		flex-direction: column;
+		justify-content: center;
+	}
+	.rooms-block__image {
+		width: 400px;
+		margin: auto;
+	}
+}
+
+
+
+
+
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+	.container {
+		margin: 0xp
+	}
+	.menu-item {
+		margin: 40px 0px;
+	}
+	.menu {
+		display: none;
+		visibility: hidden;
+	}
+	.nav-lang {
+		display: none;
+		visibility: hidden;
+	}
+	.title {
+		font-size: 1em;
+		/*margin: 0px 40px; */
+	}
+	.title__discription {
+		display: none;
+		visibility: hidden;
+	}
+	.bookButton {
+		margin: 0px;
+		padding: 16px 52px;
+		font-size: 20px;
+		border-radius: 40px;
+	}
+	.burger	{
+		display: block;
+		visibility: visible;
+	}
+	.tagline {
+		font-size: 0.7em;
+	}
+	.rooms-row {
+		flex-direction: column;
+		justify-content: center;
+	}
+	.rooms-block__image {
+		width: 300px;
+		margin: auto;
+	}
+}
+
+

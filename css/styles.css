@@ -1,0 +1,616 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	box-sizing: border-box;
+	
+	-webkit-tap-highlight-color: transparent;
+}
+
+/*.test {
+	background-color: red;
+}*/
+
+html{
+	overflow-x: hidden;
+}
+body {
+	width: 100%;
+	max-width: 1920px;
+	margin: 0 auto;
+	background-color: #E5E5E5;
+	height: 100%;
+	color: #fff; 
+	/*overflow-y: hidden;*/
+	font-family: 'Indie Flower', cursive;
+}
+img  {
+	display: block;
+}
+span {
+	display: block;
+	height: 4px;
+	width: 30px;
+	background-color: #000;
+	margin: 6px 0;
+	border-radius: 10px;
+}
+a {
+	color: #FFF;
+	text-decoration: none;
+}
+.header {
+	background-image: url(../img/header-bg.png);
+	background-repeat: no-repeat;
+    background-position: 80% 50%;
+    background-size: cover;
+    min-height: 1080px;
+}
+
+.container {
+	margin: 0px auto;
+	max-width: 1440px;
+	width: 100%;
+}
+.nav {
+	display: flex;
+}
+.nav-menu {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+.logo {
+	margin: 20px;
+	user-select: none;
+}
+.shadowBack {
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	left: 0px;
+	z-index: 1;
+	background:#000;
+    opacity: 0.7;
+    overflow-x: hidden;
+    animation-name: shadowMoving;
+	animation-duration: 100ms;
+	animation-iteration-count: 1;
+	animation-direction: alternate
+}
+@keyframes shadowMoving {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0.7;
+	}
+}
+.menu {
+	display: flex;
+	align-self: center;
+	font-size: 23px;
+}
+.menu-item {
+	align-self: center;
+	margin: 0px 20px;
+	list-style-type: none;
+	/*border:  3px solid black;*/
+	cursor: pointer;
+
+}
+.menu-item:hover {
+	color: #E8C300;
+	transition: 0.1s;
+}
+.menu-item:last-child:after {
+	content: '';
+	position: absolute;
+	margin: 0 25px;
+	width: 4px;
+	height: 32px;
+	border-radius: 10px;
+	background-color: #fff;
+	cursor: auto;
+	pointer-events:none;
+}
+.nav-lang {
+/*	position: relative;*/
+	margin: 35px 20px 0 30px;
+	cursor: pointer;
+}
+.lang:not(:first-child) {
+	position: absolute;
+	flex-direction: column;
+	animation-name: langMoving;
+	animation-duration: 100ms;
+	animation-iteration-count: 1;
+	animation-direction: alternate
+}
+@keyframes langMoving {
+	0% {
+		transform: translate(0px, -40px);
+		opacity: 0;
+	}
+	40% {
+		transform: translate(0px, -10px);
+		opacity: 0;
+	}
+	50% {
+		transform: translate(0px, -20px);
+		opacity: 0.1;
+	}
+	100% {
+		transform: translate(0px, 0px);
+		opacity: 1;
+	}
+}
+.burger	{
+	display: none;
+	margin: 22px;	
+}
+.burger__item {
+	display: block;
+	height: 8px;
+	width: 50px;
+	background-color: #fff;
+	margin: 8px 0px;
+	border-radius: 30px;
+}
+.burger-menu {
+	display: none;
+}
+.burger-menu__item {
+	/*display: flex;*/
+}
+.lang-inner {
+	display: flex;
+	justify-content: center;
+}
+.lang-inner a {
+	margin: 0 10px;
+}
+.menu-box {
+	position: fixed;
+	width: 280px;
+	height: 100%;
+	position: left;
+	z-index: 2;
+	top: 0px;
+	right: 0px;
+	background-color: #E8c300;
+	text-transform: uppercase;	
+	font-size: 25px;
+	font-weight: bold;
+	animation-name: menuMoving;
+	animation-duration: 300ms;
+	animation-iteration-count: 1;
+	animation-direction: alternate;
+}
+@keyframes menuMoving {
+	0% {
+		right: -30%;
+		opacity: 0.6;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.menu-list__top {
+	display: flex;
+	justify-content: space-between;
+	/*padding: 30px 25px;*/
+	align-items: center;
+}
+.menu-list__title {
+	flex-grow: 1;
+	text-align: center;
+}
+.menu-list__exit {
+	display: flex;
+	flex-grow: 1;
+	justify-content: center;
+	flex-direction: column;
+}
+.menu-list__exit > span:first-child{
+	position: relative;
+	top:8px;
+	left: 22px;
+	transform: rotate(45deg);
+}
+.menu-list__exit > span:last-child{
+	position: relative;
+	bottom:8px;
+	left: 22px;
+	transform: rotate(-45deg);
+}
+.burger-menu {
+	display: flex;
+	flex-direction: column;
+	list-style-type: none;
+}
+.burger-menu__item {
+	margin: 10px 0;
+	text-align: center;
+}
+
+.title {
+	display: flex;
+	flex-direction: column;
+	align-items:center;
+	justify-content: center;
+	text-transform: uppercase;
+	font-size: 2.5em;
+	color: #fff;
+}
+.title__title {
+	margin: 100px auto 30px;
+}
+.title__discription {
+
+}
+.bookButton {
+	padding: 20px 60px;
+	font-size: 18px;
+	background-color: #E8C300;
+	border-radius: 30px;
+	margin: 70px 0 0;
+	cursor: pointer;
+	user-select: none;
+}
+.getButton {
+	padding: 20px 60px;
+	font-size: 18px;
+	background-color: #CC9900;
+	border-radius: 30px;
+	margin: 70px 0 0;
+	cursor: pointer;
+	user-select: none;
+}
+.bookButton:hover {
+	background-color: #CC9933;
+	transition: 0.1s;
+	transform: scale(1.1);
+}
+.getButton:hover {
+	background-color: #CC9933;
+	transition: 0.1s;
+	transform: scale(1.1);
+}
+
+/*===========================================================*/
+/*Css для формы бронирования*/
+.bookForm{
+	position: fixed;
+	z-index: 2;
+	flex-direction: column;
+	display: flex;
+	top: 0px;
+	bottom: 0px;
+	left: 30px;
+	right: 30px;
+	max-width: 673px;
+	height: 360px;
+	margin: auto;
+	padding: 10px;
+	border: 1px solid black;
+	border-radius: 10px;
+	background-color: #fff;	
+	color: #000;
+}
+
+.bookForm-slider {
+
+}
+.bookForm-row {
+	display: flex;
+	justify-content: space-around;
+}
+.bookForm__block{
+	text-align: center;
+	width: 100%;
+	margin: 6px;
+	text-align: center;
+	border-radius: 7px;
+	border: none;
+	background-color: #E5E5E5;
+	color: #787878;
+}
+.bookForm__item {
+	width: 100%;
+	height: 60px;
+	padding:0px 10px 0px 20px;
+	border-radius: 7px;
+	background: #E5E5E5;
+	outline: none;
+}
+.bookForm__textarea {
+	height: 98px;
+	padding: 10px;
+	resize: none;
+}
+.bookForm__checkbox {
+	display: flex;
+	align-items: center;
+	margin: 3px 5px;
+	padding: 0px auto;
+	background-color: #fff;
+	justify-content: center;
+}
+.homeClass {
+	align-self: center;
+	display: flex;
+	flex-direction: column;
+	padding: 3px 10px;
+	cursor: pointer;
+	user-select: none;
+}
+.bookForm__houseList-menu {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+	text-align: left;
+	width: 110px;
+	margin-top: 25px;
+	padding: 0 10px;
+	background-color: #fff;
+	border: 1px solid #000;
+	cursor: pointer;
+}
+.bookForm__button{
+	width: 100%;
+	padding: 0px !important; 
+}
+.formSlider-points{
+	display: flex;
+	width: 100%;
+	height: 25px;
+	justify-content: center;
+}
+.formSlider-points__item{
+	display: block;
+	background-color: #fff;
+	height: 12px;
+	width: 12px;
+	border: 1px solid #000;
+	border-radius: 10px;
+	margin: 10px 5px;
+	vertical-align: middle;
+}
+.points__active {
+	background-color: #000 !important;
+}
+.inactive {
+	display: none !important; 
+}
+.bookForm-back {
+	position: absolute;
+	left: -11px;
+	top: -11px;
+	width: 32px;
+	height: 32px;
+	border:  1px solid #000;
+	border-radius: 20px;
+	background-color: #fff;	
+	cursor: pointer;
+}
+.bookForm-back:hover {
+	transform: scale(1.15);
+	transition: 0.2s;
+}
+.bookForm-back__item {
+	display: block;
+	width: 23px;
+	height: 3px;
+	margin: 5px auto;
+	border-radius: 10px;
+	background-color: #000;
+}
+.bookForm-back__item:first-child {
+	position: relative;
+	width: 12px;
+	transform:  rotate(-40deg);
+	top: 5px;
+	right: 7px;
+}
+.bookForm-back__item:last-child {
+	position: relative;
+	width: 12px;
+	transform:  rotate(40deg);
+	bottom: 5px;
+	right: 7px
+}
+
+.bookForm-close {
+	position: absolute;
+	right: -11px;
+	top: -11px;
+	width: 32px;
+	height: 32px;
+	border:  1px solid #000;
+	border-radius: 20px;
+	background-color: #fff;	
+	cursor: pointer;
+}
+.bookForm-close:hover {
+	transform: scale(1.15);
+	transition: 0.2s;
+}
+.bookform-close__item {
+	display: block;
+	width: 26px;
+	height: 3px;
+	margin: 5px auto;
+	border-radius: 10px;
+	background-color: #000;
+}
+.bookform-close__item:first-child {
+	position: absolute;
+	top: 8px;
+	left: 2px;
+	transform: rotate(45deg);
+}
+.bookform-close__item:last-child {
+	position: absolute;
+	top: 8px;
+	left: 2px;
+	transform: rotate(-45deg);
+
+}
+.formMove {
+	animation-name: formMoving;
+	animation-duration: 400ms;
+	animation-iteration-count: 1;
+	animation-direction: alternate;
+}
+@keyframes formMoving {
+	0% {
+		transform: translate(0px, 100px);
+		/*opacity: 0.6;*/
+	}
+	100% {
+		transform: translate(0px, 0px);
+		opacity: 1;
+	}
+}
+
+.invalid {
+	border: 2px solid #F30 !important; 
+}
+
+/*===================================================*/
+/*Css для вывода БД*/
+.dataOuter {
+	width: 100%;
+	color: #000;
+}
+.dataRow {
+	margin: 10px;
+    line-height: 2;
+    text-align: center;
+}
+
+/*===================================================*/
+/*Css для main*/
+.main {
+
+}
+.about{
+	display: flex;
+	align-items: center;
+	margin: auto;
+	background-color: #000;
+	color: #fff;
+	margin: 0px;
+}
+.logo {
+}
+.about__image{
+	margin: 80px auto 0px;
+	
+}
+.tagline {
+	margin: 20px auto 100px;
+	text-align: center;
+	font-size: 1.2em;
+}
+.main-offer {
+	width: 100%;
+	padding: 160px 0;
+	background-color: #ccc;
+	color: #000;
+}
+.main-offer-content {
+
+}
+.rooms-row {
+	display: flex;
+	justify-content: space-around;
+}
+.rooms-block {
+	padding: 30px;
+	font-size: 20px;
+}
+
+.rooms-block__item {
+	text-align: center;
+	margin: 30px 0;
+	font-size: 1.2em;
+}
+.rooms-block__image {
+	width: 400px;
+	box-shadow: 5px 5px 30px 1px #000;
+}
+.rooms-block__image:hover {
+	transform: scale(1.1);
+	transition: 0.2s;
+}
+
+.main-offer__title {
+	text-align: center;
+	font-size: 22px;
+	margin-bottom: 60px;
+}
+.main-room {
+	
+}
+.main-map {
+	background-color: #ccc;
+	display: block;
+}
+/*=====================================*/
+/*css для footer*/
+.footer {
+	background-color: #000;
+	display: flex;
+	font-family:  Georgia, serif !important;
+}
+.footer-content	{
+	display: flex;
+	justify-content: center;
+}
+.footer-social {
+	align-self: center;
+	width: 100%;
+	margin: 40px 0;
+}
+.footer-images {
+	align-self: center;
+	margin: 40px 0;
+}
+.footer-phones {
+	display: flex;
+	justify-content: center;
+}
+.footer-phones__item {
+	margin: 20px;
+}
+.footer-contacts {
+	display: flex;
+	justify-content: center;
+}
+.footer-contacts__item {
+	margin: 10px 20px;
+	cursor: pointer;
+}
+.footer-copyright {
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+	font-size: 15px;
+}
+.footer-copyright__item {
+	margin: 10px 0px 30px;
+}
+.footer-images {
+	margin-right: 20px;
+}
+.footer-images__item {
+	margin: 10px 0px;
+}
+.footer-images__item:hover {
+	transform: scale(1.1);
+}
